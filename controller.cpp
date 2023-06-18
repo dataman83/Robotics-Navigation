@@ -785,10 +785,10 @@ int main(int argc, char** args){
     gazebo_msgs::SetModelState setRobotState;   
     geometry_msgs::Twist velocity;
 
-    std::vector<int> NRange = {7};
+    std::vector<int> NRange = {14};
     std::vector<double> densities = {0.2, 0.25, 0.3, 0.35, 0.4};
-    int trials = 4;
-    std::vector<bool> PATMoves = {true, false};
+    int trials = 1;
+    std::vector<bool> PATMoves = {false};
     std::ofstream csvFile ("C:\\ws\\catkin_ws\\src\\assignment3\\src\\data.csv");
 
     const char header[] = "N, density, generationTime, success, pathLength, PAT\n";
@@ -888,10 +888,8 @@ int main(int argc, char** args){
                         }
                         if (path.size() == 0 && !goal){
                             break;
-                        }
-                        
+                        }               
                     }
-
                 csvFile << N << ',' << density << ',' << generationTime << ',' << goal << ',' << nodesTravelled << ',' << pat << '\n';
                 
                     if (goal){

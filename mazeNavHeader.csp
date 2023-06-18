@@ -1,9 +1,9 @@
 #import "PAT.Lib.List";
 #define W 7;
 #define H 7;
-#define goal 48;
+#define goal 45;
 #define source 0;
-var obst_array = [12,13,22];
+var obst_array = [2,14,38,40];
 var N = H * W;
 var<List> obst_list = new List(obst_array);
 
